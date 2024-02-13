@@ -32,7 +32,7 @@ export class LoginComponent {
        if (response.length > 0 && response[0].password === password){
          sessionStorage.setItem('email', email as string)
 
-           this.toaster.success('Hello world!', 'Toastr fun!');
+           this.toaster.success('welcome back!', ' login successfully');
 
          this.router.navigate(['./home']);
        }else{
