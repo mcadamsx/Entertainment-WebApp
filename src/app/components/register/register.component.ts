@@ -6,7 +6,6 @@ import {passwordMatchValidator} from "../../shared/password-match-directive";
 import{AuthService} from "../../services/auth.service";
 import {User} from "../../interface/User";
 
-
 @Component({
   selector: 'app-register',
   standalone: true,
