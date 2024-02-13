@@ -3,8 +3,8 @@ import {RouterLink} from "@angular/router";
 import {FormBuilder, Validators, ReactiveFormsModule} from "@angular/forms";
 import {NgIf} from "@angular/common";
 import {AuthService} from "../../services/auth.service";
-import {response} from "express";
 import {Router} from'@angular/router'
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-login',
@@ -18,7 +18,7 @@ export class LoginComponent {
     email: ["", [Validators.required, Validators.email]],
     password: ["", [Validators.required]]
   });
-  constructor(private fb: FormBuilder, private authService: AuthService, private router:Router ) {}
+  constructor(private fb: FormBuilder, private authService: AuthService, private router:Router, private toaster: ToastrService ) {}
   get email() {
     return this.loginForm.controls['email'];
   }
@@ -31,6 +31,9 @@ export class LoginComponent {
      response =>{
        if (response.length > 0 && response[0].password === password){
          sessionStorage.setItem('email', email as string)
+
+           this.toaster.success('Hello world!', 'Toastr fun!');
+
          this.router.navigate(['./home']);
        }else{
          console.error("email or password is wrong")

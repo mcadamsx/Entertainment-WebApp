@@ -10,7 +10,7 @@
       </header>
       <div class="my-10 w-full ">
         <input type="email" formControlName="email"
-               class="bg-transparent lg:bg-transparent border-b border-b-gray-600 font-extralight text-sm  focus:ring-blue-500 focus:border-white0 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-white hover:border-white outline-0 active:border-none"
+               class="bg-transparent border-b border-b-gray-600 font-extralight text-sm  focus:ring-blue-500 focus:border-white0 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-white hover:border-white outline-0 active:border-none"
                placeholder="Email address">
         <small *ngIf=" email.invalid && (email.dirty || email.touched)" class="text-red-800">
           <div *ngIf="email.errors?.['required']">can't be empty</div>
