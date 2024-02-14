@@ -5,6 +5,7 @@ import {NgIf} from "@angular/common";
 import {passwordMatchValidator} from "../../shared/password-match-directive";
 import{AuthService} from "../../services/auth.service";
 import {User} from "../../interface/User";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-register',
@@ -23,7 +24,7 @@ export class RegisterComponent {
       validators: passwordMatchValidator
     }
     );
-  constructor(private fb: FormBuilder, private authService: AuthService, private router : Router) {}
+  constructor(private fb: FormBuilder, private authService: AuthService, private router : Router, private toaster : ToastrService) {}
 
   get email() {
     return this.registerForm.controls['email'];
@@ -39,10 +40,16 @@ export class RegisterComponent {
     delete postData.repeatPassword
     this.authService.registerUser(postData as User).subscribe(
       response =>{
+        this.toaster.success('now login!', ' Account created successfully');
         this.router.navigate(['./login']);
         console.log(response)
       },
-      error => console.log(error)
+      error => {
+        this.toaster.error('', ' Error');
+
+      }
+
+
     )
   };
 }

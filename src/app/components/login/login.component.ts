@@ -36,7 +36,7 @@ export class LoginComponent {
 
          this.router.navigate(['./home']);
        }else{
-         console.error("email or password is wrong")
+         this.toaster.error('email or password invalid', ' Sorry');
        }
      },
      error => {
