@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import {Router} from "@angular/router";
+import {SearchComponent} from "../../components/search/search.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [SearchComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

@@ -3,7 +3,7 @@
   <div class="   bg-semi-dark-blue p-4 w-full mx-auto lg:rounded-2xl  lg:mx-0 lg:h-full lg:w-5% lg:py-6">
     <div class=" flex items-center justify-between  mx-auto lg:mx-auto  lg:h-full  lg:flex-col">
       <div class="items-center lg:w-80% lg:mx-auto  lg:h-5% ">
-        <img src="assets/logo.svg" alt="" class="w-full">
+        <img src="../../../assets/logo.svg" alt="" class="w-full">
       </div>
       <div
         class="flex  items-center w-50%   align-middle gap-8 lg:gap-12  lg:flex-col lg:h-70% ">
@@ -40,28 +40,13 @@
 
       </div>
       <div class="w-10% border-2 border-white rounded-3xl lg:w-full  lg:h-1.5/4 align-bottom  lg:border">
-        <img (click)="logout()" class="border-white" src="assets/image-avatar.png">
+        <img (click)="logout()" class="border-white" src="../../../assets/image-avatar.png">
 
       </div>
     </div>
   </div>
   <div class="max-w-full w-full mx-auto">
-    <div class="">
-      <form>
-        <div class="relative">
-          <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                 fill="none" viewBox="0 0 20 20">
-              <path stroke="#FFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-            </svg>
-          </div>
-          <input type="search" id="default-search"
-                 class="block w-full p-4 ps-10 text-md bg-transparent lg:w-90%  focus:ring-blue-500 focus:border-none  dark:bg-gray-700 dark:border-none dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-dark:focus:border-none"
-                 placeholder="Search for movies or TV series">
-        </div>
-      </form>
-    </div>
+<app-search></app-search>
   </div>
 </section>
 
