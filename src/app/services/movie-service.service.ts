@@ -8,6 +8,8 @@ import {environment} from "../environments/environment.development";
 })
 export class MovieServiceService {
   protected movies: MoviesInterface [] = [];
+  protected series: MoviesInterface [] = [];
+  protected movie: MoviesInterface [] = [];
 
   constructor(private http: HttpClient) {}
   getAllMovies(): MoviesInterface[] {
@@ -17,5 +19,21 @@ export class MovieServiceService {
     });
     return this.movies;
   }
+  getAllSeries(): MoviesInterface[] {
+    this.http.get<MoviesInterface[]>(`${environment.endPoint}/movies`).subscribe((data) => {
+      this.series = data.filter(movie => movie.category.includes("TV Series"));
+    });
+    return this.series;
+  }
+  getMovies(): MoviesInterface[] {
+    this.http.get<MoviesInterface[]>(`${environment.endPoint}/movies`).subscribe((data) => {
+      this.movie = data.filter(movie => movie.category.includes("Movie"));
+    });
+    return this. movie;
+  }
+
+
+
+
 }
 

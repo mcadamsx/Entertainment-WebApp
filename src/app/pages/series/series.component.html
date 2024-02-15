@@ -4,11 +4,15 @@
   <app-sidebar></app-sidebar>
   <div class="lg:mx-auto lg:w-5/6">
     <app-search></app-search>
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
-      <app-movie-list
-        *ngFor="let movie of movieList" [movieList]="movie"
-      ></app-movie-list>
+    <div>
+      <h1 class="text-2xl my-8 font-light"> TV Series</h1>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+        <app-movie-list
+          *ngFor="let series of seriesList" [movieList]="series"
+        ></app-movie-list>
+      </div>
     </div>
   </div>
 </div>
+
 
