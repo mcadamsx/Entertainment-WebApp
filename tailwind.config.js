@@ -8,7 +8,8 @@ module.exports = {
       colors:{
         'dark-blue': '#10141E',
         'semi-dark-blue': '#161D2F',
-        'Grayish-blue': '#5A698F',
+        'Grayish-blue': '#979797',
+        'semi-grayish-blue': '#979797',
         'red-btn': '#FC4747',
         'off-secondary': '#D31FCC',
         'text-color': '#9197B3',
