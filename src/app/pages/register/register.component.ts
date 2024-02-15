@@ -41,8 +41,8 @@ export class RegisterComponent {
     this.authService.registerUser(postData as User).subscribe(
       response =>{
         this.toaster.success('now login!', ' Account created successfully');
-        this.router.navigate(['./login']);
-        console.log(response)
+        this.router.navigate(['./login']).then(r => {
+          console.log(response)} );
       },
       error => {
         this.toaster.error('', ' Error');

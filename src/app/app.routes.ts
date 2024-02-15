@@ -2,15 +2,12 @@ import { Routes } from '@angular/router';
 import {HomeComponent} from "./pages/home/home.component";
 import {LoginComponent} from "./pages/login/login.component";
 import {RegisterComponent} from "./pages/register/register.component";
-import {authGuard} from "./guards/auth.guard";
+// import {authGuard} from "./guards/auth.guard";
+import {MoviesComponent} from "./pages/movies/movies.component";
+import {SeriesComponent} from "./pages/series/series.component";
+import {BookmarkComponent} from "./pages/bookmark/bookmark.component";
 
 export const routes: Routes = [
-  {
-    path: 'home',
-    component: HomeComponent,
-    title: 'home',
-    canActivate: [authGuard]
-  },
   {
     path: 'login',
     component: LoginComponent,
@@ -22,6 +19,27 @@ export const routes: Routes = [
     title: 'register'
   },
   {
+    path: 'home',
+    component: HomeComponent,
+    title: 'home',
+    // canActivate: [authGuard]
+  },
+  {
+    path: 'bookmark',
+    component: BookmarkComponent,
+    title: 'bookmark'
+  },
+  {
+    path: 'series',
+    component: SeriesComponent,
+    title: 'series'
+  },
+  {
+    path: 'movies',
+    component: MoviesComponent,
+    title: 'movies'
+  },
+  {
     path: '', redirectTo: 'login', pathMatch: "full",
-  }
+  },
 ];

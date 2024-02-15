@@ -6,6 +6,7 @@ import {AuthService} from "../../services/auth.service";
 import {Router} from'@angular/router'
 import {ToastrService} from "ngx-toastr";
 
+
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -30,10 +31,8 @@ export class LoginComponent {
    this.authService.getUserByEmail(email as string).subscribe(
      response =>{
        if (response.length > 0 && response[0].password === password){
-         sessionStorage.setItem('email', email as string)
-
+         // sessionStorage.setItem('email', email as string)
            this.toaster.success('welcome back!', ' login successfully');
-
          this.router.navigate(['./home']);
        }else{
          this.toaster.error('email or password invalid', ' Sorry');
