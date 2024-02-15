@@ -10,6 +10,7 @@ export class MovieServiceService {
   protected movies: MoviesInterface [] = [];
   protected series: MoviesInterface [] = [];
   protected movie: MoviesInterface [] = [];
+  protected bookmarked: MoviesInterface [] = []
 
   constructor(private http: HttpClient) {}
   getAllMovies(): MoviesInterface[] {
@@ -31,6 +32,12 @@ export class MovieServiceService {
     });
     return this. movie;
   }
+  // getBookMarked(): MoviesInterface[] {
+  //   this.http.get<MoviesInterface[]>(this.getMovies()).subscribe((data) => {
+  //     this.bookmarked = data.filter(movie => movie.isBookmarked)
+  //   });
+  //   return this. bookmarked;
+  // }
 
 
 
