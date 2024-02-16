@@ -6,6 +6,7 @@ import {MovieServiceService} from "../../services/movie-service.service";
 import {Router} from "@angular/router";
 import {MovieListComponent} from "../../components/movie-list/movie-list.component";
 import {NgForOf, NgIf} from "@angular/common";
+import {FormsModule} from "@angular/forms";
 
 @Component({
   selector: 'app-bookmark',
@@ -16,17 +17,43 @@ import {NgForOf, NgIf} from "@angular/common";
     MovieListComponent,
     NgForOf,
     NgIf,
+    FormsModule,
   ],
   templateUrl: './bookmark.component.html',
   styleUrl: './bookmark.component.css',
 })
 export class BookmarkComponent {
-  movieList: MoviesInterface [] = [];
-  constructor(private rs:MovieServiceService) {}
+  BookmarkedMovieList: MoviesInterface[] = [];
+  BookmarkedSeriesList: MoviesInterface[] = [];
+  userSearch: any;
+  constructor(private rs: MovieServiceService) {}
   ngOnInit(): void {
     this.rs.getAllMovies().subscribe((response: MoviesInterface[]) => {
-      this.movieList = response.filter(mov => mov.isBookmarked)
+      this.BookmarkedMovieList = response.filter(
+        (mov) => mov.category.includes('Movie') && mov.isBookmarked,
+      );
+      this.BookmarkedSeriesList = response.filter(
+        (mov) => mov.category.includes('TV Series') && mov.isBookmarked,
+      );
     });
   }
+  search() {
 
+    if (this.userSearch) {
+      this.BookmarkedMovieList = this.BookmarkedMovieList.filter((res) => {
+        return res.title
+          .toLocaleLowerCase()
+          .match(this.userSearch.toLocaleLowerCase());
+      });
+    }
+    if (this.userSearch){
+      this.BookmarkedSeriesList = this.BookmarkedSeriesList.filter((res) => {
+        return res.title
+          .toLocaleLowerCase()
+          .match(this.userSearch.toLocaleLowerCase());
+      });
+    }else{
+      this.ngOnInit();
+    }
+  }
 }

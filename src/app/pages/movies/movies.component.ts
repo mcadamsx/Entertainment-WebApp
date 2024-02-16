@@ -7,8 +7,8 @@ import {TrendingComponent} from "../../components/trending/trending.component";
 import {MoviesInterface} from "../../interface/movies-interface";
 import {MovieServiceService} from "../../services/movie-service.service";
 import {Router} from "@angular/router";
-import {app} from "../../../../server";
 import {response} from "express";
+import {FormsModule} from "@angular/forms";
 
 @Component({
   selector: 'app-movies',
@@ -20,18 +20,28 @@ import {response} from "express";
     SidebarComponent,
     TrendingComponent,
     NgIf,
+    FormsModule,
   ],
   templateUrl: './movies.component.html',
   styleUrl: './movies.component.css',
 })
 export class MoviesComponent {
-  movieList: MoviesInterface [] = [];
-  constructor(private rs:MovieServiceService) {}
-  ngOnInit(): void{
+  movieList: MoviesInterface[] = [];
+  constructor(private rs: MovieServiceService) {}
+  ngOnInit(): void {
     this.rs.getAllMovies().subscribe((response: MoviesInterface[]) => {
-      this.movieList = response.filter(mov=>mov.category.includes("Movie"))
-
+      this.movieList = response.filter((mov) => mov.category.includes('Movie'));
     });
+  }
+  userSearch:any;
+  search() {
+    if (this.userSearch == "") {
+      this.ngOnInit();
+    }else{
+      this.movieList = this.movieList.filter(res =>{
+        return res.title.toLocaleLowerCase().match(this.userSearch.toLocaleLowerCase())
+      } )
+    }
 
   }
 
