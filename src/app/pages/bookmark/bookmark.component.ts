@@ -1,5 +1,4 @@
 import {Component, inject} from '@angular/core';
-import {SearchComponent} from "../../components/search/search.component";
 import {SidebarComponent} from "../../components/sidebar/sidebar.component";
 import {MoviesInterface} from "../../interface/movies-interface";
 import {MovieServiceService} from "../../services/movie-service.service";
@@ -12,7 +11,6 @@ import {FormsModule} from "@angular/forms";
   selector: 'app-bookmark',
   standalone: true,
   imports: [
-    SearchComponent,
     SidebarComponent,
     MovieListComponent,
     NgForOf,

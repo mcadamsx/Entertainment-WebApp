@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import { CarouselModule } from 'primeng/carousel';
 import { CardModule } from 'primeng/card';
+import {MoviesInterface} from "../../interface/movies-interface";
 @Component({
   selector: 'app-trending',
   standalone: true,
@@ -10,5 +11,5 @@ import { CardModule } from 'primeng/card';
 })
 export class TrendingComponent {
 
-
+  @Input() movieList!: MoviesInterface;
 }

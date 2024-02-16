@@ -1,6 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
-import {SearchComponent} from "../../components/search/search.component";
 import {TrendingComponent} from "../../components/trending/trending.component";
 import {MovieListComponent} from "../../components/movie-list/movie-list.component";
 import {MoviesInterface} from "../../interface/movies-interface";
@@ -12,7 +11,6 @@ import {FormsModule} from "@angular/forms";
   selector: 'app-home',
   standalone: true,
   imports: [
-    SearchComponent,
     TrendingComponent,
     MovieListComponent,
     NgForOf,
@@ -24,12 +22,19 @@ import {FormsModule} from "@angular/forms";
 })
 export class HomeComponent implements OnInit {
   movieList: MoviesInterface[] = [];
+  TrendingList: MoviesInterface [] = [];
   constructor(private rs: MovieServiceService) {}
   ngOnInit(): void {
     this.rs.getAllMovies().subscribe((response: MoviesInterface[]) => {
       this.movieList = response;
+      this.TrendingList = response.filter(
+        (mov) => mov.isTrending,
+      );
     });
+
   }
+
+
   userSearch: any;
 
   search() {
