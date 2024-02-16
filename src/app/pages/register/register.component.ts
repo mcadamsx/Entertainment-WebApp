@@ -3,8 +3,8 @@ import {Router, RouterLink} from "@angular/router";
 import {FormBuilder, Validators, ReactiveFormsModule} from "@angular/forms";
 import {NgIf} from "@angular/common";
 import {passwordMatchValidator} from "../../shared/password-match-directive";
-import{AuthService} from "../../services/auth.service";
-import {User} from "../../interface/User";
+import {MovieServiceService} from "../../services/movie-service.service";
+import {Auth} from "../../interface/auth";
 import {ToastrService} from "ngx-toastr";
 
 @Component({
@@ -24,7 +24,7 @@ export class RegisterComponent {
       validators: passwordMatchValidator
     }
     );
-  constructor(private fb: FormBuilder, private authService: AuthService, private router : Router, private toaster : ToastrService) {}
+  constructor(private fb: FormBuilder, private authService: MovieServiceService, private router : Router, private toaster : ToastrService) {}
 
   get email() {
     return this.registerForm.controls['email'];
@@ -38,7 +38,7 @@ export class RegisterComponent {
   submitDetails(){
     const postData = {...this.registerForm.value};
     delete postData.repeatPassword
-    this.authService.registerUser(postData as User).subscribe(
+    this.authService.registerUser(postData as Auth).subscribe(
       response =>{
         this.toaster.success('now login!', ' Account created successfully');
         this.router.navigate(['./login']).then(r => {

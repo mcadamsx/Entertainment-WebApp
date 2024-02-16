@@ -23,10 +23,12 @@ import {TrendingComponent} from "../../components/trending/trending.component";
   styleUrl: './series.component.css',
 })
 export class SeriesComponent {
-  seriesList: MoviesInterface[] = [];
-  seriesService: MovieServiceService = inject(MovieServiceService);
+  movieList: MoviesInterface [] = [];
+  constructor(private rs:MovieServiceService) {}
+  ngOnInit(): void {
+    this.rs.getAllMovies().subscribe((response: MoviesInterface[]) => {
+      this.movieList = response.filter(mov => mov.category.includes("TV Series"))
 
-  constructor(private router: Router) {
-    this.seriesList = this.seriesService.getAllSeries();
+    });
   }
 }

@@ -6,12 +6,14 @@ import {RegisterComponent} from "./pages/register/register.component";
 import {MoviesComponent} from "./pages/movies/movies.component";
 import {SeriesComponent} from "./pages/series/series.component";
 import {BookmarkComponent} from "./pages/bookmark/bookmark.component";
+import {authGuard} from "./guards/auth.guard";
 
 export const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
-    title: 'login'
+    title: 'login',
+
   },
   {
     path: 'register',
@@ -22,7 +24,7 @@ export const routes: Routes = [
     path: 'home',
     component: HomeComponent,
     title: 'home',
-    // canActivate: [authGuard]
+    canActivate: [authGuard]
   },
   {
     path: 'bookmark',

@@ -8,6 +8,7 @@ import {MoviesInterface} from "../../interface/movies-interface";
 import {MovieServiceService} from "../../services/movie-service.service";
 import {Router} from "@angular/router";
 import {app} from "../../../../server";
+import {response} from "express";
 
 @Component({
   selector: 'app-movies',
@@ -24,10 +25,14 @@ import {app} from "../../../../server";
   styleUrl: './movies.component.css',
 })
 export class MoviesComponent {
-  movList: MoviesInterface[] = [];
-  movService: MovieServiceService = inject(MovieServiceService);
+  movieList: MoviesInterface [] = [];
+  constructor(private rs:MovieServiceService) {}
+  ngOnInit(): void{
+    this.rs.getAllMovies().subscribe((response: MoviesInterface[]) => {
+      this.movieList = response.filter(mov=>mov.category.includes("Movie"))
 
-  constructor(private router: Router) {
-    this.movList = this.movService.getMovies();
+    });
+
   }
+
 }

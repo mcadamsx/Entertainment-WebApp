@@ -21,9 +21,12 @@ import {NgForOf, NgIf} from "@angular/common";
   styleUrl: './bookmark.component.css',
 })
 export class BookmarkComponent {
-  bookmarkList: MoviesInterface[] = [];
-  bookmarkService: MovieServiceService = inject(MovieServiceService);
-  constructor(private router: Router) {
-    this.bookmarkList = this.bookmarkService.getBookMarked();
+  movieList: MoviesInterface [] = [];
+  constructor(private rs:MovieServiceService) {}
+  ngOnInit(): void {
+    this.rs.getAllMovies().subscribe((response: MoviesInterface[]) => {
+      this.movieList = response.filter(mov => mov.isBookmarked)
+    });
   }
+
 }

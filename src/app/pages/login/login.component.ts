@@ -2,7 +2,7 @@ import { Component,  } from '@angular/core';
 import {RouterLink} from "@angular/router";
 import {FormBuilder, Validators, ReactiveFormsModule} from "@angular/forms";
 import {NgIf} from "@angular/common";
-import {AuthService} from "../../services/auth.service";
+import{MovieServiceService} from "../../services/movie-service.service";
 import {Router} from'@angular/router'
 import {ToastrService} from "ngx-toastr";
 
@@ -19,7 +19,7 @@ export class LoginComponent {
     email: ["", [Validators.required, Validators.email]],
     password: ["", [Validators.required]]
   });
-  constructor(private fb: FormBuilder, private authService: AuthService, private router:Router, private toaster: ToastrService ) {}
+  constructor(private fb: FormBuilder, private authService: MovieServiceService, private router:Router, private toaster: ToastrService ) {}
   get email() {
     return this.loginForm.controls['email'];
   }
@@ -31,7 +31,7 @@ export class LoginComponent {
    this.authService.getUserByEmail(email as string).subscribe(
      response =>{
        if (response.length > 0 && response[0].password === password){
-         // sessionStorage.setItem('email', email as string)
+         sessionStorage.setItem('email', email as string)
            this.toaster.success('welcome back!', ' login successfully');
          this.router.navigate(['./home']);
        }else{
