@@ -46,10 +46,7 @@ export class RegisterComponent {
       },
       error => {
         this.toaster.error('', ' Error');
-
       }
-
-
     )
   };
 }

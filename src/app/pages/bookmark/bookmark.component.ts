@@ -46,7 +46,6 @@ export class BookmarkComponent {
     });
   }
 
-
   search() {
     if (this.userSearch) {
       this.BookmarkedMovieList = this.BookmarkedMovieList.filter((res) => {
@@ -64,8 +63,5 @@ export class BookmarkComponent {
     } else {
 
     }
-
   }
-
-
 }

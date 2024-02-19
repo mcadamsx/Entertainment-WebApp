@@ -4,7 +4,6 @@ import { MoviesInterface } from '../interface/movies-interface';
 import {environment} from "../environments/environment.development";
 import {Auth} from "../interface/auth";
 import {map, Observable} from "rxjs";
-import {Environment} from "@angular/cli/lib/config/workspace-schema";
 
 
 @Injectable({
