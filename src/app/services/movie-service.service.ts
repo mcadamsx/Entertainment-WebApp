@@ -3,12 +3,19 @@ import { HttpClient } from '@angular/common/http';
 import { MoviesInterface } from '../interface/movies-interface';
 import {environment} from "../environments/environment.development";
 import {Auth} from "../interface/auth";
-import {Observable} from "rxjs";
+import {map, Observable} from "rxjs";
+import {Environment} from "@angular/cli/lib/config/workspace-schema";
+
 
 @Injectable({
   providedIn: 'root',
 })
 export class MovieServiceService {
+
+  private baseUrl: string = 'https://api.jsonserve.com/wZsyMe'
+  private LoginUrl: string = '/assets/loginDB.json'
+  private bookmarkUrl: string = '/assets/bookmarked.json'
+
   protected movies: MoviesInterface [] = [];
   protected series: MoviesInterface [] = [];
   protected movie: MoviesInterface [] = [];
@@ -25,18 +32,17 @@ export class MovieServiceService {
   getAllMovies(): Observable<MoviesInterface[]>{
    return this.http.get<MoviesInterface[]>(`${environment.endPoint}/movies`)
   }
-  // getAllSeries(): MoviesInterface[] {
-  //   this.http.get<MoviesInterface[]>(`${environment.endPoint}/movies`).subscribe((data) => {
-  //     this.series = data.filter(movie => movie.category.includes("TV Series"));
-  //   });
-  //   return this.series;
-  // }
-  // getMovies(): MoviesInterface[] {
-  //   this.http.get<MoviesInterface[]>(`${environment.endPoint}/movies`).subscribe((data) => {
-  //     this.movie = data.filter(movie => movie.category.includes("Movie"));
-  //   });
-  //   return this. movie;
-  // }
+
+  addToBookmark(movie: MoviesInterface){
+    this.http.put<MoviesInterface[]>(`${environment.endPoint}/movies/${movie.id}`, movie)
+      .subscribe(response =>{
+        console.log("success")
+      }, error => console.error("Error"))
+  }
+
+  getBookmark(): Observable<MoviesInterface[]>{
+    return this.http.get<MoviesInterface[]>(`${this.bookmarkUrl}`)
+  }
 
 
 

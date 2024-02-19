@@ -7,6 +7,10 @@ import {MovieListComponent} from "../../components/movie-list/movie-list.compone
 import {NgForOf, NgIf} from "@angular/common";
 import {FormsModule} from "@angular/forms";
 
+
+
+
+
 @Component({
   selector: 'app-bookmark',
   standalone: true,
@@ -23,8 +27,13 @@ import {FormsModule} from "@angular/forms";
 export class BookmarkComponent {
   BookmarkedMovieList: MoviesInterface[] = [];
   BookmarkedSeriesList: MoviesInterface[] = [];
+  BookmarkList: MoviesInterface[] = [];
   userSearch: any;
-  constructor(private rs: MovieServiceService) {}
+
+
+  constructor(private rs: MovieServiceService) {
+  }
+
   ngOnInit(): void {
     this.rs.getAllMovies().subscribe((response: MoviesInterface[]) => {
       this.BookmarkedMovieList = response.filter(
@@ -33,10 +42,12 @@ export class BookmarkComponent {
       this.BookmarkedSeriesList = response.filter(
         (mov) => mov.category.includes('TV Series') && mov.isBookmarked,
       );
+  console.log(this.BookmarkedMovieList)
     });
   }
-  search() {
 
+
+  search() {
     if (this.userSearch) {
       this.BookmarkedMovieList = this.BookmarkedMovieList.filter((res) => {
         return res.title
@@ -44,14 +55,17 @@ export class BookmarkComponent {
           .match(this.userSearch.toLocaleLowerCase());
       });
     }
-    if (this.userSearch){
+    if (this.userSearch) {
       this.BookmarkedSeriesList = this.BookmarkedSeriesList.filter((res) => {
         return res.title
           .toLocaleLowerCase()
           .match(this.userSearch.toLocaleLowerCase());
       });
-    }else{
-      this.ngOnInit();
+    } else {
+
     }
+
   }
+
+
 }
