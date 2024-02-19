@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { MoviesInterface } from '../interface/movies-interface';
 import {environment} from "../environments/environment.development";
 import {Auth} from "../interface/auth";
-import {map, Observable} from "rxjs";
+import {Observable} from "rxjs";
 
 
 @Injectable({
@@ -38,14 +38,6 @@ export class MovieServiceService {
         console.log("success")
       }, error => console.error("Error"))
   }
-
-  getBookmark(): Observable<MoviesInterface[]>{
-    return this.http.get<MoviesInterface[]>(`${this.bookmarkUrl}`)
-  }
-
-
-
-
 
 }
 
