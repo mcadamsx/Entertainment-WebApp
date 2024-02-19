@@ -27,10 +27,8 @@ export class MovieListComponent {
     }
 
     }
-
-
-
 }
+
 
 
 
