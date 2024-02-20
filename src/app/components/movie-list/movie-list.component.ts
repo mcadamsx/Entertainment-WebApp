@@ -23,7 +23,7 @@ export class MovieListComponent {
       this.toaster.success('removed from Bookmark!', ' successfully');
       setTimeout(() => {
         location.reload();
-     }, 1000);
+     }, 10000);
     } else {
       movieList.isBookmarked = true;
       this.rs.addToBookmark(movieList)
