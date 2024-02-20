@@ -1,5 +1,5 @@
 <script src="../../pages/register/register.component.ts"></script>
-<section class="my-2 border ">
+<section class="my-2">
   <div class="relative">
     <img class="rounded-2xl" [src]="movieList.thumbnail.regular.large">
     <div class="absolute z-10 cursor-pointer  end-2.5 bottom-2/3  lg:end-6 " (click)="addToBookmark(movieList)">
@@ -12,7 +12,7 @@
     </div>
     <div
       class=" absolute rounded-3xl flex bottom-0 w-full h-full bg-semi-grayish-blue ease-out duration-700 transition-delay-100 bg-opacity-40 opacity-0 hover:opacity-100 ">
-      <div class="mx-auto my-auto  items-center z-10 mx-auto p-1 z-40">
+      <div class="mx-auto my-auto  items-center z-10">
         <svg width="117" height="48" viewBox="0 0 117 48" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g clip-path="url(#clip0_0_6533)">
             <rect opacity="0.25" width="117" height="48" rx="24" fill="white"/>
@@ -32,7 +32,7 @@
       </div>
     </div>
   </div>
-  <div class="flex items-center  opacity-60 w-80% justify-content-between my-1 text-sm font-extralight">
+  <div class="flex items-center opacity-60 w-90% justify-content-between my-1 text-sm font-extralight">
     <div class="mx-1  ">{{ movieList.year }}</div>
     <div *ngIf="movieList.category ==='TV Series'" class="mx-1">
       <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">

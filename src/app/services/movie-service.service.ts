@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { MoviesInterface } from '../interface/movies-interface';
 import { environment } from '../environments/environment.development';
 import { Auth } from '../interface/auth';
-import { Observable } from 'rxjs';
+import { Observable, of, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -12,6 +12,8 @@ export class MovieServiceService {
   private baseUrl: string = 'https://api.jsonserve.com/wZsyMe';
   private LoginUrl: string = '/assets/loginDB.json';
   private bookmarkUrl: string = '/assets/bookmarked.json';
+  updateBookmark: EventEmitter<any> = new EventEmitter();
+
   protected movies: MoviesInterface[] = [];
   protected series: MoviesInterface[] = [];
   protected movie: MoviesInterface[] = [];
@@ -40,7 +42,9 @@ export class MovieServiceService {
         movie,
       )
       .subscribe(
-        (response) => {},
+        (response) => {
+          this.updateBookmark.emit(response);
+        },
         (error) => console.error('Error'),
       );
   }
