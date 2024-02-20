@@ -6,7 +6,6 @@ import {MoviesInterface} from "../../interface/movies-interface";
 import {MovieServiceService} from "../../services/movie-service.service";
 import {TrendingComponent} from "../../components/trending/trending.component";
 import {FormsModule} from "@angular/forms";
-
 @Component({
   selector: 'app-series',
   standalone: true,

@@ -1,5 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
+import { Component, OnInit } from '@angular/core';
 import {TrendingComponent} from "../../components/trending/trending.component";
 import {MovieListComponent} from "../../components/movie-list/movie-list.component";
 import {MoviesInterface} from "../../interface/movies-interface";
@@ -31,12 +30,8 @@ export class HomeComponent implements OnInit {
         (mov) => mov.isTrending,
       );
     });
-
   }
-
-
   userSearch: any;
-
   search() {
     if (this.userSearch == "") {
       this.ngOnInit();
@@ -45,8 +40,6 @@ export class HomeComponent implements OnInit {
         return res.title.toLocaleLowerCase().match(this.userSearch.toLocaleLowerCase())
       } )
     }
-
   }
-
 }
 

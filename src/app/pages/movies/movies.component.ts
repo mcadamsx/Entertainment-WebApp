@@ -38,7 +38,5 @@ export class MoviesComponent {
         return res.title.toLocaleLowerCase().match(this.userSearch.toLocaleLowerCase())
       } )
     }
-
   }
-
 }

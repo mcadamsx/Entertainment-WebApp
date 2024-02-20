@@ -3,7 +3,6 @@ import {MoviesInterface} from "../../interface/movies-interface";
 import {NgIf, NgOptimizedImage} from "@angular/common";
 import {MovieServiceService} from "../../services/movie-service.service";
 import {ToastrService} from "ngx-toastr";
-import {response} from "express";
 
 @Component({
   selector: 'app-movie-list',
@@ -17,12 +16,6 @@ export class MovieListComponent {
 
 
   constructor(private rs: MovieServiceService, private toaster: ToastrService) {}
-  ngOnInit(){
-    this.rs.updateBookmark.subscribe((response)=>{
-      console.log('Data updated', response)
-    })
-  }
-
   addToBookmark(movieList: MoviesInterface){
     if (movieList.isBookmarked) {
       movieList.isBookmarked = false
@@ -30,17 +23,13 @@ export class MovieListComponent {
       this.toaster.success('removed from Bookmark!', ' successfully');
       setTimeout(() => {
         location.reload();
-      }, 50);
-
-
-
+     }, 50);
     } else {
       movieList.isBookmarked = true;
       this.rs.addToBookmark(movieList)
       this.toaster.success('Added to Bookmark!', ' successfully');
     }
     }
-
 }
 
 
