@@ -1,9 +1,9 @@
 import {Component, inject, Input} from '@angular/core';
 import {MoviesInterface} from "../../interface/movies-interface";
-import {HomeComponent} from "../../pages/home/home.component";
 import {NgIf, NgOptimizedImage} from "@angular/common";
-import {BookmarkComponent} from "../../pages/bookmark/bookmark.component";
 import {MovieServiceService} from "../../services/movie-service.service";
+import {ToastrService} from "ngx-toastr";
+import {response} from "express";
 
 @Component({
   selector: 'app-movie-list',
@@ -14,19 +14,33 @@ import {MovieServiceService} from "../../services/movie-service.service";
 })
 export class MovieListComponent {
   @Input() movieList!: MoviesInterface;
-  constructor(private rs: MovieServiceService) {}
+
+
+  constructor(private rs: MovieServiceService, private toaster: ToastrService) {}
+  ngOnInit(){
+    this.rs.updateBookmark.subscribe((response)=>{
+      console.log('Data updated', response)
+    })
+  }
+
   addToBookmark(movieList: MoviesInterface){
     if (movieList.isBookmarked) {
-      movieList.isBookmarked = false;
-
+      movieList.isBookmarked = false
      this.rs.addToBookmark(movieList)
+      this.toaster.success('removed from Bookmark!', ' successfully');
+      setTimeout(() => {
+        location.reload();
+      }, 50);
+
+
+
     } else {
       movieList.isBookmarked = true;
       this.rs.addToBookmark(movieList)
-
+      this.toaster.success('Added to Bookmark!', ' successfully');
+    }
     }
 
-    }
 }
 
 

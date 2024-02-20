@@ -6,7 +6,6 @@ import{MovieServiceService} from "../../services/movie-service.service";
 import {Router} from'@angular/router'
 import {ToastrService} from "ngx-toastr";
 
-
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -43,5 +42,4 @@ export class LoginComponent {
      }
    )
   }
-
 }
