@@ -1,39 +1,9 @@
 {
   "users": [
     {
-      "id": "89c0",
-      "email": "example@mail.com",
-      "password": "1234"
-    },
-    {
-      "id": "063a",
+      "id": "e7d7",
       "email": "xyz@mail.com",
       "password": "123"
-    },
-    {
-      "id": "e723",
-      "email": "dsdsds",
-      "password": "123"
-    },
-    {
-      "id": "2b29",
-      "email": "xyz@mail.com",
-      "password": "1234"
-    },
-    {
-      "id": "0b97",
-      "email": "jona@mail.com",
-      "password": "123"
-    },
-    {
-      "id": "7384",
-      "email": "abc@mail.com",
-      "password": "123"
-    },
-    {
-      "id": "d55b",
-      "email": "xyz@mail.com",
-      "password": "1234"
     }
   ],
   "movies": [
@@ -177,7 +147,7 @@
       "year": 2019,
       "category": "Movie",
       "rating": "E",
-      "isBookmarked": false,
+      "isBookmarked": true,
       "isTrending": false,
       "id": "eb84"
     },
@@ -273,7 +243,7 @@
       "year": 2017,
       "category": "Movie",
       "rating": "PG",
-      "isBookmarked": true,
+      "isBookmarked": false,
       "isTrending": false,
       "id": "43c1"
     },
@@ -305,7 +275,7 @@
       "year": 2015,
       "category": "Movie",
       "rating": "PG",
-      "isBookmarked": false,
+      "isBookmarked": true,
       "isTrending": false,
       "id": "5e3d"
     },
@@ -321,7 +291,7 @@
       "year": 2021,
       "category": "Movie",
       "rating": "PG",
-      "isBookmarked": false,
+      "isBookmarked": true,
       "isTrending": false,
       "id": "5c07"
     },
@@ -337,7 +307,7 @@
       "year": 2017,
       "category": "Movie",
       "rating": "18+",
-      "isBookmarked": false,
+      "isBookmarked": true,
       "isTrending": false,
       "id": "533f"
     },

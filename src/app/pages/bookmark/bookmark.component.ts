@@ -1,9 +1,9 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit, SimpleChanges,OnChanges } from '@angular/core';
 import { SidebarComponent } from "../../components/sidebar/sidebar.component";
 import { MoviesInterface } from "../../interface/movies-interface";
 import { MovieServiceService } from "../../services/movie-service.service";
 import { MovieListComponent } from "../../components/movie-list/movie-list.component";
-import { NgForOf, NgIf } from "@angular/common";
+import {AsyncPipe, NgForOf, NgIf} from "@angular/common";
 import { FormsModule } from "@angular/forms";
 
 @Component({
@@ -15,11 +15,12 @@ import { FormsModule } from "@angular/forms";
     NgForOf,
     NgIf,
     FormsModule,
+    AsyncPipe,
   ],
   templateUrl: './bookmark.component.html',
   styleUrl: './bookmark.component.css',
 })
-export class BookmarkComponent {
+export class BookmarkComponent implements OnInit {
   BookmarkedMovieList: MoviesInterface[] = [];
   BookmarkedSeriesList: MoviesInterface[] = [];
   BookmarkList: MoviesInterface[] = [];
@@ -30,11 +31,11 @@ export class BookmarkComponent {
   ngOnInit(): void {
     this.rs.getAllMovies().subscribe((response: MoviesInterface[]) => {
       this.BookmarkedMovieList = response.filter(
-        (mov) => mov.category.includes('Movie') && mov.isBookmarked);
+        (mov) => mov.category.includes('Movie') && mov.isBookmarked,
+      );
       this.BookmarkedSeriesList = response.filter(
-        (mov) => mov.category.includes('TV Series') && mov.isBookmarked);
-
-      // Reload the page after fetching data (delayed by 1 microsecond)
+        (mov) => mov.category.includes('TV Series') && mov.isBookmarked,
+      );
 
     });
   }
@@ -54,7 +55,6 @@ export class BookmarkComponent {
           .match(this.userSearch.toLocaleLowerCase());
       });
     } else {
-
     }
   }
 }

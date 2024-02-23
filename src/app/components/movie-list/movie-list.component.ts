@@ -14,7 +14,6 @@ import {ToastrService} from "ngx-toastr";
 export class MovieListComponent {
   @Input() movieList!: MoviesInterface;
 
-
   constructor(private rs: MovieServiceService, private toaster: ToastrService) {}
   addToBookmark(movieList: MoviesInterface){
     if (movieList.isBookmarked) {
@@ -23,7 +22,8 @@ export class MovieListComponent {
       this.toaster.success('removed from Bookmark!', ' successfully');
      //  setTimeout(() => {
      //    location.reload();
-     // }, 10000);
+     // }, 1000);
+
     } else {
       movieList.isBookmarked = true;
       this.rs.addToBookmark(movieList)
