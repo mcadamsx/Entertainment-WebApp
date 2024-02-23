@@ -1,19 +1,4 @@
-# Entertainment web app - Frontend Mentor
-
-This is a solution to the [Entertainment web app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/entertainment-web-app-J-UhgAW1X). Frontend Mentor challenges help you improve your coding skills by building realistic project.
-
-## Table of contents
-
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-- [Author](#author)
-
-## Overview
+# Entertainment web app
 
 ### The challenge
 
@@ -29,37 +14,29 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshots/screenshot.png)
-
 
 ### Links
 
-- Solution URL: [On Frontend Mentor](https://www.frontendmentor.io/solutions/entertainment-app-with-next13-ts-postcss-tailwind-and-redux-toolkit-lS5lqG0dJS)
-- Live Site URL: [Hosted on Vercel](https://entertainment-webapp-red.vercel.app/)
+- Live Site URL: [Hosted on Vercel](https://entertainment-web-app-virid-three.vercel.app/login)
 
-## My process
 
 ### Built with
 
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [TypeScript](https://www.typescriptlang.org/) - JS With Syntax For Types
-- [Next.js 13](https://nextjs.org/) - The React Framework for the Web
-- [App Router](https://nextjs.org/docs/app/) - The new Next.js router released in Next.js version 13
-- [PostCSS](https://postcss.org/) - A tool for transforming CSS with JS
-- [TailwindCSS](https://tailwindcss.com/) - A utility-first CSS framework
-- [Redux](https://redux.js.org/) - A Predictable State Container for JS Apps
-- [Redux Toolkit](https://redux-toolkit.js.org/) - Toolset for efficient Redux development
-- [SVGR](https://react-svgr.com/) - Transforms SVGs into React components
+- Angular 17
+- Tailwind CSS
+- Ng Toast
+  
+
+
 
 
 ### What I learned
 
-I didn't know anything about Next 13 and App Router, I learned both while building this project and learned to use SVGs and images better with Next.js
+- I learnt how to valitdate a form in angular.
+- How to fatech data from an external api and also update the data.
+- I learn how to use some angular directive such as (ngFor and If) 
 
 ## Author
 
-- Github - [@Artin-GH](https://github.com/Artin-GH/)
-- Frontend Mentor - [@Artin-GH](https://www.frontendmentor.io/profile/Artin-GH/)
-- Telegram - [@RTn_GH](https://t.me/RTn_GH/)
+- Github - [@mcadamsx](https://github.com/mcadamsz/)
+
