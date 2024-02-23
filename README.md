@@ -4,15 +4,32 @@
 
 Users should be able to:
 
-- View the optimal layout for the app depending on their device's screen size
-- See hover states for all interactive elements on the page
-- Navigate between Home, Movies, TV Series, and Bookmarked Shows pages
-- Add/Remove bookmarks from all movies and TV series
-- Search for relevant shows on all pages
-- **Bonus**: Build this project as a full-stack application
-- **Bonus**: If you're building a full-stack app, we provide authentication screen (sign-up/login) designs if you'd like to create an auth flow
+- The app should display a responsive design that adjusts the layout of the interface based on the user's screen size.
+- The app should display a mobile-friendly layout on smaller screens.
+- The navigation menu should be fixed to the left for larger screens. Use the "Desktop - Home" page in the design as a visual reference.
+-  All interactive elements (such as buttons and links) should display a hover state when the user hovers over them with their mouse.
+-  The user should be able to navigate between the Home, Movies, TV Series, and Bookmarked Shows pages by clicking on their respective links in the interface
+-  Home -  The trending section shouldscroll sideways to reveal othertrending shows any search input should search through all shows (i.e., all movies and TV series)
+-  Movies - This page should only display shows with the "Movie" category o Any search input should searchthrough all movies
+- TV Series o This page should only display shows with the "TV Series" category o Any search input should search through all TV series
+- Bookmarked Shows o This page should display all bookmarked shows from both categories o Any search input should search through all bookmarked shows
+- The user should be able to add a movie or TV series to their bookmarks by clicking on a "Bookmark" button associated with the respective show.
+- The user should be able to remove a movie or TV series from their bookmarks by clicking on a "Remove Bookmark" button associated with the respective show.
+- The user should be able to search for relevant movies or TV series by entering a search query in a search bar provided in the interface.
+- The search results should include all movies or TV series that match the user's search query.
+- The user should be able to visit the app URL and access the registration page.
+- The user should be able to add a movie or TV series to their bookmarks by clicking on a "Bookmark" button associated with the respective show.
+- The user should be able to remove a movie or TV series from their bookmarks by clicking on a "Remove Bookmark" button associated with the respective show.
+- The user should be able to search for relevant movies or TV series by entering a search query in a search bar provided in the interface.
+- The search results should include all movies or TV series that match the user's search query.
+- The user should be able to visit the app URL and access the registration page.
 
-### Screenshot
+  
+### How to use 
+
+- Create an Account
+- Login into your account
+
 
 
 ### Links
