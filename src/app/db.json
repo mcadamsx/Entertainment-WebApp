@@ -147,7 +147,7 @@
       "year": 2019,
       "category": "Movie",
       "rating": "E",
-      "isBookmarked": true,
+      "isBookmarked": false,
       "isTrending": false,
       "id": "eb84"
     },

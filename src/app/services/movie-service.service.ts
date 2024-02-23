@@ -9,9 +9,6 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class MovieServiceService {
-  private baseUrl: string = 'https://api.jsonserve.com/wZsyMe';
-  private LoginUrl: string = '/assets/loginDB.json';
-  private bookmarkUrl: string = '/assets/bookmarked.json';
   protected movies: MoviesInterface[] = [];
   protected series: MoviesInterface[] = [];
   protected movie: MoviesInterface[] = [];
