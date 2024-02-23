@@ -1,65 +1,59 @@
-# Entertainment web app - Frontend Mentor
-
-This is a solution to the [Entertainment web app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/entertainment-web-app-J-UhgAW1X). Frontend Mentor challenges help you improve your coding skills by building realistic project.
-
-## Table of contents
-
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-- [Author](#author)
-
-## Overview
+# Entertainment web app
 
 ### The challenge
 
 Users should be able to:
 
-- View the optimal layout for the app depending on their device's screen size
-- See hover states for all interactive elements on the page
-- Navigate between Home, Movies, TV Series, and Bookmarked Shows pages
-- Add/Remove bookmarks from all movies and TV series
-- Search for relevant shows on all pages
-- **Bonus**: Build this project as a full-stack application
-- **Bonus**: If you're building a full-stack app, we provide authentication screen (sign-up/login) designs if you'd like to create an auth flow
+- The app should display a responsive design that adjusts the layout of the interface based on the user's screen size.
+- The app should display a mobile-friendly layout on smaller screens.
+- The navigation menu should be fixed to the left for larger screens. Use the "Desktop - Home" page in the design as a visual reference.
+-  All interactive elements (such as buttons and links) should display a hover state when the user hovers over them with their mouse.
+-  The user should be able to navigate between the Home, Movies, TV Series, and Bookmarked Shows pages by clicking on their respective links in the interface
+-  Home -  The trending section shouldscroll sideways to reveal othertrending shows any search input should search through all shows (i.e., all movies and TV series)
+-  Movies - This page should only display shows with the "Movie" category o Any search input should searchthrough all movies
+- TV Series o This page should only display shows with the "TV Series" category o Any search input should search through all TV series
+- Bookmarked Shows o This page should display all bookmarked shows from both categories o Any search input should search through all bookmarked shows
+- The user should be able to add a movie or TV series to their bookmarks by clicking on a "Bookmark" button associated with the respective show.
+- The user should be able to remove a movie or TV series from their bookmarks by clicking on a "Remove Bookmark" button associated with the respective show.
+- The user should be able to search for relevant movies or TV series by entering a search query in a search bar provided in the interface.
+- The search results should include all movies or TV series that match the user's search query.
+- The user should be able to visit the app URL and access the registration page.
+- The user should be able to add a movie or TV series to their bookmarks by clicking on a "Bookmark" button associated with the respective show.
+- The user should be able to remove a movie or TV series from their bookmarks by clicking on a "Remove Bookmark" button associated with the respective show.
+- The user should be able to search for relevant movies or TV series by entering a search query in a search bar provided in the interface.
+- The search results should include all movies or TV series that match the user's search query.
+- The user should be able to visit the app URL and access the registration page.
 
-### Screenshot
+  
+### How to use 
 
-![](./screenshots/screenshot.png)
+- Create an Account
+- Login into your account
+
 
 
 ### Links
 
-- Solution URL: [On Frontend Mentor](https://www.frontendmentor.io/solutions/entertainment-app-with-next13-ts-postcss-tailwind-and-redux-toolkit-lS5lqG0dJS)
-- Live Site URL: [Hosted on Vercel](https://entertainment-webapp-red.vercel.app/)
+- Live Site URL: [Hosted on Vercel](https://entertainment-web-app-virid-three.vercel.app/login)
 
-## My process
 
 ### Built with
 
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [TypeScript](https://www.typescriptlang.org/) - JS With Syntax For Types
-- [Next.js 13](https://nextjs.org/) - The React Framework for the Web
-- [App Router](https://nextjs.org/docs/app/) - The new Next.js router released in Next.js version 13
-- [PostCSS](https://postcss.org/) - A tool for transforming CSS with JS
-- [TailwindCSS](https://tailwindcss.com/) - A utility-first CSS framework
-- [Redux](https://redux.js.org/) - A Predictable State Container for JS Apps
-- [Redux Toolkit](https://redux-toolkit.js.org/) - Toolset for efficient Redux development
-- [SVGR](https://react-svgr.com/) - Transforms SVGs into React components
+- Angular 17
+- Tailwind CSS
+- Ng Toast
+  
+
+
 
 
 ### What I learned
 
-I didn't know anything about Next 13 and App Router, I learned both while building this project and learned to use SVGs and images better with Next.js
+- I learnt how to valitdate a form in angular.
+- How to fatech data from an external api and also update the data.
+- I learn how to use some angular directive such as (ngFor and If) 
 
 ## Author
 
-- Github - [@Artin-GH](https://github.com/Artin-GH/)
-- Frontend Mentor - [@Artin-GH](https://www.frontendmentor.io/profile/Artin-GH/)
-- Telegram - [@RTn_GH](https://t.me/RTn_GH/)
+- Github - [@mcadamsx](https://github.com/mcadamsz/)
+
