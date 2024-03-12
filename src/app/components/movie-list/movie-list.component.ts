@@ -20,10 +20,6 @@ export class MovieListComponent {
       movieList.isBookmarked = false
      this.rs.addToBookmark(movieList)
       this.toaster.success('removed from Bookmark!', ' successfully');
-     //  setTimeout(() => {
-     //    location.reload();
-     // }, 1000);
-
     } else {
       movieList.isBookmarked = true;
       this.rs.addToBookmark(movieList)
