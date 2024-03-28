@@ -6,6 +6,7 @@ import {MoviesInterface} from "../../interface/movies-interface";
 import {MovieServiceService} from "../../services/movie-service.service";
 import {TrendingComponent} from "../../components/trending/trending.component";
 import {FormsModule} from "@angular/forms";
+
 @Component({
   selector: 'app-series',
   standalone: true,
@@ -23,7 +24,10 @@ import {FormsModule} from "@angular/forms";
 export class SeriesComponent {
   movieList: MoviesInterface[] = [];
   userSearch: String | undefined;
-  constructor(private rs: MovieServiceService) {}
+
+  constructor(private rs: MovieServiceService) {
+  }
+
   ngOnInit(): void {
     this.rs.getAllMovies().subscribe((response: MoviesInterface[]) => {
       this.movieList = response.filter((mov) =>
@@ -31,6 +35,7 @@ export class SeriesComponent {
       );
     });
   }
+
   search() {
     if (this.userSearch == "") {
       this.ngOnInit();
@@ -41,4 +46,4 @@ export class SeriesComponent {
       })
     }
   }
-  }
+}

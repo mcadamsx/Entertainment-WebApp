@@ -1,11 +1,11 @@
 <div class="pad">
-  <section class="w-full max-h-full  p-8  text-white my-0 lg:my-0 ">
-    <div class="mt-5% mb-10 10% mx-auto  text-center w-5%" >
-      <img src="../../../assets/logo.svg" alt="logo">
+  <section class="w-full max-h-full  p-6  text-white my-0 lg:my-0 ">
+    <div class="" >
+      <img src="../../../assets/logo.svg" alt="logo" class="mx-auto">
 
     </div>
     <form action="" (ngSubmit)="loginUser()" [formGroup]="loginForm"
-          class="w-full  p-10 rounded-3xl bg-semi-dark-blue lg:w-30% lg:mx-auto lg: my-5% ">
+          class="w-full my-16 p-10 rounded-3xl bg-semi-dark-blue lg:w-30% lg:mx-auto lg: my-5% ">
       <header>
         <h1 class="text-2xl lg:text-3xl font-extralight">Login</h1>
       </header>
@@ -24,14 +24,14 @@
       <div class="my-10 w-full relative">
         <input type="password" formControlName="password"
                class="bg-transparent border-b border-b-gray-600 font-extralight text-sm  focus:ring-blue-500 focus:border-white block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-dark:focus:border-white hover:border-white outline-0 active:border-none"
-               placeholder="password">
+               placeholder="Password">
         <small *ngIf="password.invalid && (password.dirty||password.touched)" class="text-red-800 absolute end-2.5 bottom-2.5">
           <div *ngIf="password.errors?.['required']">can't be empty</div>
         </small>
       </div>
       <div class="my-14">
         <button type="submit" [disabled]="loginForm.invalid"
-                class="bg-red-btn w-full rounded font-extralight text-sm py-4 px-4 hover:bg-white hover:text-black ">
+                class="bg-red-btn w-full rounded font-extralight text-xs py-4 px-4 hover:bg-white hover:text-black lg:py-2">
           Login to your account
         </button>
         <p class="text-center my-6 text-md font-extralight">Don't have account <a routerLink="/register" class="text-red-btn mx-1"> sign Up</a>

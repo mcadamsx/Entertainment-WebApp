@@ -1,8 +1,8 @@
-<div class="w-full h-full  p-4 text-white my-0 lg:my-0 ">
-  <div class="mt-5% mb-10 10% mx-auto  text-center w-5%" >
-    <img src="../../../assets/logo.svg" alt="logo">
+<div class="w-full h-full  p-6 text-white my-0 lg:my-0 ">
+  <div class="" >
+    <img src="../../../assets/logo.svg" alt="logo" class="mx-auto">
   </div>
-  <form action="" (ngSubmit)="submitDetails()" [formGroup]="registerForm" class="w-full  p-10 rounded-3xl bg-semi-dark-blue lg:w-30% lg:mx-auto lg: my-5% ">
+  <form action="" (ngSubmit)="submitDetails()" [formGroup]="registerForm" class="w-full  p-8 rounded-3xl bg-semi-dark-blue lg:w-30% lg:mx-auto lg: my-5% ">
     <header>
       <h1 class="text-2xl lg:text-3xl font-extralight">Register</h1>
     </header>
@@ -32,7 +32,7 @@
       password  should match
     </small>
     <div class="my-14">
-      <button type="submit" [disabled]="registerForm.invalid"  class="bg-red-btn w-full rounded font-extralight text-sm py-4 px-4 hover:bg-white hover:text-black ">
+      <button type="submit" [disabled]="registerForm.invalid"  class="bg-red-btn w-full rounded font-extralight text-sm py-2 px-4 hover:bg-white hover:text-black ">
         Create an account
       </button>
       <p class="text-center my-6 text-md font-extralight">Already have an account? <a routerLink="/login" class="text-red-btn mx-1"> login</a></p>
