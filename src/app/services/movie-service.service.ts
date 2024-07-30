@@ -19,8 +19,8 @@ export class MovieServiceService {
     return this.http.post(`${environment.endPoint}/users`, userDetails);
   }
   getUserByEmail(email: string): Observable<Auth[]> {
-    return this.http.get<Auth[]>(
-      `${environment.endPoint}/users?email=${email}`,
+    return this.http.post<Auth[]>(
+      `${environment.endPoint}/api/users `, email
     );
   }
   getAllMovies(): Observable<MoviesInterface[]> {

@@ -19,11 +19,15 @@ export class RegisterComponent {
     email: ['', [Validators.required]],
     password: ['', [Validators.required]],
     repeatPassword: ['', [Validators.required]],
+    
+    validators: passwordMatchValidator
   },
     {
       validators: passwordMatchValidator
     }
     );
+
+    
   constructor(private fb: FormBuilder, private authService: MovieServiceService, private router : Router, private toaster : ToastrService) {}
 
   get email() {
