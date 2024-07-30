@@ -15,7 +15,7 @@ export class MovieListComponent {
   @Input() movieList!: MoviesInterface;
 
   constructor(private rs: MovieServiceService, private toaster: ToastrService) {}
-  addToBookmark(movieList: MoviesInterface){
+  public addToBookmark(movieList: MoviesInterface){
     if (movieList.isBookmarked) {
       movieList.isBookmarked = false
      this.rs.addToBookmark(movieList)
