@@ -45,7 +45,7 @@ export class BookmarkComponent implements OnInit {
     });
   }
 
-  public search() {
+  search() {
     if (this.userSearch) {
       this.BookmarkedMovieList = this.BookmarkedMovieList.filter((res) => {
         return res.title
