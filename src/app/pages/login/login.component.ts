@@ -1,9 +1,8 @@
 import { Component,  } from '@angular/core';
-import {RouterLink} from "@angular/router";
+import {RouterLink, Router} from "@angular/router";
 import {FormBuilder, Validators, ReactiveFormsModule} from "@angular/forms";
 import {NgIf} from "@angular/common";
 import{MovieServiceService} from "../../services/movie-service.service";
-import {Router} from'@angular/router'
 import {ToastrService} from "ngx-toastr";
 import {SpinnerComponent} from "../../components/spinner/spinner.component";
 @Component({
