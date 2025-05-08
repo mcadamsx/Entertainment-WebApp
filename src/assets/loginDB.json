@@ -1,0 +1,33 @@
+[
+    {
+      "id": "89c0",
+      "email": "example@mail.com",
+      "password": "1234"
+    },
+    {
+      "id": "063a",
+      "email": "xyz@mail.com",
+      "password": "123"
+    },
+    {
+      "id": "e723",
+      "email": "dsdsds",
+      "password": "123"
+    },
+    {
+      "id": "2b29",
+      "email": "xyz@mail.com",
+      "password": "1234"
+    },
+    {
+      "id": "0b97",
+      "email": "jona@mail.com",
+      "password": "123"
+    },
+    {
+      "id": "7384",
+      "email": "abc@mail.com",
+      "password": "123"
+    }
+  ]
+
