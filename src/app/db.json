@@ -14,6 +14,11 @@
       "id": "6249",
       "email": "xyz@example.com",
       "password": "123"
+    },
+    {
+      "id": "116e",
+      "email": "abc@mail.com",
+      "password": "1234"
     }
   ],
   "movies": [
@@ -73,7 +78,7 @@
       "year": 2019,
       "category": "TV Series",
       "rating": "E",
-      "isBookmarked": true,
+      "isBookmarked": false,
       "isTrending": true,
       "id": "8e08"
     },
@@ -445,7 +450,7 @@
       "year": 2017,
       "category": "Movie",
       "rating": "18+",
-      "isBookmarked": true,
+      "isBookmarked": false,
       "isTrending": false,
       "id": "edf4"
     },
