@@ -6,6 +6,7 @@ import {passwordMatchValidator} from "../../shared/password-match-directive";
 import {MovieServiceService} from "../../services/movie-service.service";
 import {Auth} from "../../interface/auth";
 import {ToastrService} from "ngx-toastr";
+import { log } from "console";
 
 @Component({
   selector: 'app-register',
@@ -42,6 +43,7 @@ export class RegisterComponent {
   submitDetails(){
     const postData = {...this.registerForm.value};
     delete postData.repeatPassword
+    console.log(postData)
     this.authService.registerUser(postData as Auth).subscribe(
       response =>{
         this.toaster.success('now login!', ' Account created successfully');
